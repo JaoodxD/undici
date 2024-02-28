@@ -100,7 +100,7 @@ declare namespace Dispatcher {
     /** Default: `null` */
     body?: string | Buffer | Uint8Array | Readable | null | FormData;
     /** Default: `null` */
-    headers?: IncomingHttpHeaders | string[] | null;
+    headers?: IncomingHttpHeaders | string[] | Iterable<[string, string | string[] | undefined]> | null;
     /** Query string params to be embedded in the request URL. Default: `null` */
     query?: Record<string, any>;
     /** Whether the requests can be safely retried or not. If `false` the request won't be sent until all preceding requests in the pipeline have completed. Default: `true` if `method` is `HEAD` or `GET`. */
@@ -124,7 +124,7 @@ declare namespace Dispatcher {
     origin: string | URL;
     path: string;
     /** Default: `null` */
-    headers?: IncomingHttpHeaders | string[] | null;
+    headers?: IncomingHttpHeaders | string[] | Iterable<[string, string | string[] | undefined]> | null;
     /** Default: `null` */
     signal?: AbortSignal | EventEmitter | null;
     /** This argument parameter is passed through to `ConnectData` */
